@@ -1,0 +1,35 @@
+OASISFormat: 0.3
+Name:        ohll
+Version:     0.1
+Synopsis:    ohll
+Authors:     Travis Brady
+License:     MIT
+Plugins:     META (0.3)
+
+Library ohll
+  Path:             src
+  FindlibName:      ohll
+  BuildTools:       ocamlbuild
+  CompiledObject:   best
+  Modules:          Ohll
+  CSources:         bitmap.c, bitmap.h, stubs.c, hll.c, hll.h,
+                    hll_constants.c, hll_constants.h,
+                    murmur3.c, murmur3.h
+  CCOpt:	       -g -std=c99 -D_GNU_SOURCE -O2 -pthread
+
+Executable ohll_test
+  Path:             src
+  BuildTools:       ocamlbuild
+  BuildDepends:     ohll
+  CompiledObject:   native
+  MainIs:           ohll_test.ml
+  Install:          false
+
+Executable ohll_stdin
+  Path:             src
+  BuildTools:       ocamlbuild
+  BuildDepends:     ohll, core, threads
+  CompiledObject:   native
+  MainIs:           ohll_stdin.ml
+  Install:          false
+

@@ -1,0 +1,34 @@
+# OASIS_START
+# DO NOT EDIT (digest: fe81acd0d1f45a40d0db2f6c5f1c05dd)
+# Ignore VCS directories, you can use the same kind of rule outside 
+# OASIS_START/STOP if you want to exclude directories that contains 
+# useless stuff for the build process
+<**/.svn>: -traverse
+<**/.svn>: not_hygienic
+".bzr": -traverse
+".bzr": not_hygienic
+".hg": -traverse
+".hg": not_hygienic
+".git": -traverse
+".git": not_hygienic
+"_darcs": -traverse
+"_darcs": not_hygienic
+# Library ohll
+"src/ohll.cmxs": use_ohll
+<src/*.ml{,i}>: oasis_library_ohll_ccopt
+"src/bitmap.c": oasis_library_ohll_ccopt
+"src/stubs.c": oasis_library_ohll_ccopt
+"src/hll.c": oasis_library_ohll_ccopt
+"src/hll_constants.c": oasis_library_ohll_ccopt
+"src/murmur3.c": oasis_library_ohll_ccopt
+<src/ohll.{cma,cmxa}>: use_libohll_stubs
+# Executable ohll_test
+"src/ohll_test.native": use_ohll
+# Executable ohll_stdin
+"src/ohll_stdin.native": use_ohll
+"src/ohll_stdin.native": pkg_core
+"src/ohll_stdin.native": pkg_threads
+<src/*.ml{,i}>: use_ohll
+<src/*.ml{,i}>: pkg_core
+<src/*.ml{,i}>: pkg_threads
+# OASIS_STOP

@@ -1,0 +1,8 @@
+# OASIS_START
+# DO NOT EDIT (digest: 4f250c1a65fa50854c22bcfca704a0ca)
+bitmap.o
+stubs.o
+hll.o
+hll_constants.o
+murmur3.o
+# OASIS_STOP

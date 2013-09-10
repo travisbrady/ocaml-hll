@@ -1,0 +1,11 @@
+# OASIS_START
+# DO NOT EDIT (digest: ec1a5648bf356e79a2409fe29cdc6c03)
+version = "0.1"
+description = "ohll"
+archive(byte) = "ohll.cma"
+archive(byte, plugin) = "ohll.cma"
+archive(native) = "ohll.cmxa"
+archive(native, plugin) = "ohll.cmxs"
+exists_if = "ohll.cma"
+# OASIS_STOP
+
