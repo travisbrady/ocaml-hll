@@ -5,7 +5,15 @@ OCaml HyperLogLog
 
 A L P H A
 
-Some simple OCaml code to wrap @armon 's HLLD https://github.com/armon/hlld
+Some simple OCaml code to wrap the core HLL data structure in @armon 's HLLD https://github.com/armon/hlld
+
+A HyperLogLog is a probabilistic data structure that allows for approximate set membership counting.
+For instance, you want to track the number of unique user ids you've seen in an application that processes streams
+of data and you want to do so in bounded memory.
+
+HLLD is a server (not unlike Redis) for the storage and querying of HyperLogLogs.
+This library on the other hand allows you to use HyperLogLogs in OCaml but stores them only in memory
+and does not query HLLD or otherwise open network connections.
 
 Usage:
 ```ocaml
@@ -16,7 +24,9 @@ Ohll.hll_size hll;;
 - : float = 2.00003051819896394
 ```
 
-Currently only works on Linux 
+Currently only works on Linux .
+
+Have a look at hll_merge to compute set unions of two hlls.
 
 Like I said: A L P H A
 
